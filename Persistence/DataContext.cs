@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence;
-public class EFContextClass : DbContext
+public class DataContext : DbContext
 {
-    public EFContextClass(DbContextOptions options) : base(options)
+    public DataContext(DbContextOptions options) : base(options)
     {
     }
 
