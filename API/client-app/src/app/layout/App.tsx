@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Header, List, ListItem } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { Activity } from '../models/activity';
+import NavBar from './NavBar';
+import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 
 function App() {
 
@@ -15,18 +17,13 @@ function App() {
   },[])
 
   return (
-    <div>
-
-    <Header as = 'h2' icon='users' content= 'Reactivities'/>
-     <List>
-      {activites.map((activity) => (
-        <ListItem key={activity.id}>
-          {activity.title}
-        </ListItem>
-      ))}
-     </List>
-    </div>
-  )
+    <>
+      <NavBar />
+      <Container style={{ marginTop: "7em" }}>
+        <ActivityDashboard activities = {activites}/>
+      </Container>
+    </>
+  );
 }
 
 export default App
