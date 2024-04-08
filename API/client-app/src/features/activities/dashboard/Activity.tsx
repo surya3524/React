@@ -5,6 +5,7 @@ interface Props{
     activities : Activity[];
 }
 
+//Added ActivityList as children
 
 export default function ActivityList({activities}:Props){
     return (
